@@ -17,10 +17,17 @@
    </head>
    <body>
       <div class="container">
-         <div class="box-conainer">
+         <div class="price-toggler-container">
+            <span>monthly</span>
+            <div class="price-toggler"></div>
+            <span>yearly</span>
+         </div>
+
+         <!-- Start| BoxContainer -->
+         <div class="box-container">
             <!-- Start| Box -->
             <div class="box">
-               <i class="fa-solid fa-rocket fa-6x"></i>
+               <i class="fa-solid fa-person-running fa-6x"></i>
                <h3>Basic</h3>
                <div class="amount">
                   <span class="currency">$</span>
@@ -40,17 +47,17 @@
             <!-- Start| Box -->
             <div class="box">
                <i class="fa-solid fa-rocket fa-6x"></i>
-               <h3>Basic</h3>
+               <h3>Standard</h3>
                <div class="amount">
                   <span class="currency">$</span>
-                  <span class="price">12</span>
+                  <span class="price">20</span>
                   <span class="duration">/mo</span>
                </div>
                <ul>
-                  <li>10GB Storage</li>
+                  <li>22GB Storage</li>
                   <li>Maintainance</li>
-                  <li>20 Downloads</li>
-                  <li>10GB Emails Storage</li>
+                  <li>200 Downloads</li>
+                  <li>30GB Emails Storage</li>
                   <li>24/7 Support</li>
                </ul>
                <a href="#" class="btn">Select Plan</a>
@@ -58,24 +65,48 @@
             <!-- Ends| Box -->
             <!-- Start| Box -->
             <div class="box">
-               <i class="fa-solid fa-rocket fa-6x"></i>
-               <h3>Basic</h3>
+               <i class="fa-solid fa-chess-king fa-6x"></i>
+               <h3>Pro</h3>
                <div class="amount">
                   <span class="currency">$</span>
-                  <span class="price">12</span>
+                  <span class="price">20</span>
                   <span class="duration">/mo</span>
                </div>
                <ul>
-                  <li>10GB Storage</li>
+                  <li>100GB Storage</li>
                   <li>Maintainance</li>
-                  <li>20 Downloads</li>
-                  <li>10GB Emails Storage</li>
+                  <li>Unlimited Downloads</li>
+                  <li>100GB Emails Storage</li>
                   <li>24/7 Support</li>
                </ul>
                <a href="#" class="btn">Select Plan</a>
             </div>
             <!-- Ends| Box -->
          </div>
+         <!-- End| BoxContainer -->
       </div>
+
+      <!-- JavaScript -->
+      <script>
+         let priceToggler = document.querySelector(".price-toggler");
+         let price = document.querySelectorAll(".price");
+         let duration = document.querySelectorAll(".duration");
+
+         priceToggler.onclick = () => {
+            priceToggler.classList.toggle("active");
+
+            if (priceToggler.classList.contains("active")) {
+               duration.forEach((duration) => (duration.innerHTML = "/yr"));
+               price.forEach(
+                  (price) => (price.innerHTML = price.innerHTML * 10)
+               );
+            } else {
+               duration.forEach((duration) => (duration.innerHTML = "/mo"));
+               price.forEach(
+                  (price) => (price.innerHTML = price.innerHTML / 10)
+               );
+            }
+         };
+      </script>
    </body>
 </html>

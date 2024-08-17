@@ -13,7 +13,107 @@
 
 .container {
    height: 100vh;
+   background: #dddddd;
    display: flex;
    flex-flow: column;
    padding: 10px 8% 70px;
+}
+
+.container .box-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   padding: 10px 0;
+}
+
+.container .box-container .box {
+   background: #fff;
+   padding: 15px 0;
+   border-radius: 5px;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+   text-align: center;
+   flex-basis: 300px;
+}
+
+.container .box-container .box h3 {
+   font-size: 24px;
+   color: #666;
+}
+
+.container .box-container .box .amount {
+   font-weight: 600;
+   color: #3f5a36;
+   padding: 10px 0;
+   font-size: 23px;
+}
+
+.container .box-container .box .amount .price {
+   font-size: 55px;
+}
+
+.container .box-container .box ul li {
+   list-style: none;
+   padding: 2px 0;
+   color: #666;
+   font-size: 16px;
+}
+
+.container .box-container .box .btn {
+   display: inline-block;
+   border-radius: 8px;
+   background: #3f5a36;
+   color: #fff;
+   margin-top: 10px;
+   padding: 10px 30px;
+   font-size: 16px;
+}
+
+.container .box-container .box .btn:hover {
+   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+   transition: all 0.3s ease;
+}
+
+.container .price-toggler-container {
+   margin: 10px auto;
+   background: #fff;
+   padding: 10px;
+   border-radius: 5px;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.container .price-toggler-container span {
+   font-weight: 700;
+   color: #666;
+   font-size: 18px;
+}
+
+.container .price-toggler-container .price-toggler {
+   height: 40px;
+   width: 120px;
+   border-radius: 50px;
+   background: #3f5a36;
+   position: relative;
+   cursor: pointer;
+   margin: 0 10px;
+}
+
+.container .price-toggler-container .price-toggler::before {
+   content: "";
+   position: absolute;
+   top: 5px;
+   left: 8px;
+   background: #fff;
+   border-radius: 50%;
+   height: 30px;
+   width: 30px;
+   transition: all 0.2s ease-out;
+}
+
+.container .price-toggler-container .price-toggler.active::before {
+   left: 82px;
 }
